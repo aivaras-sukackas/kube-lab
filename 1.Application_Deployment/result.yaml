@@ -1,29 +1,32 @@
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 
+  name: result-deploy
 spec:
-  replicas: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: result
   template:
     metadata:
       labels:
-        app: 
+        app: result
     spec:
       containers:
-      - image: aivarassu/
+      - image: aivarassu/result_app:0.0.27
         ports:
-        - containerPort: 
-        name: 
+        - containerPort: 80
+        name: result-container
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: 
+  name: result-svc
 spec:
   type: ClusterIP
   ports:
-  - port: 
-    targetPort:  
+  - port: 5001
+    targetPort: 80
   selector:
-    app: 
+    app: result

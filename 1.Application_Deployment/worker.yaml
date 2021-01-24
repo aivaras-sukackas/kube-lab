@@ -1,15 +1,18 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 
+  name: worker-deploy
 
 spec:
-  replicas: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: worker
   template:
     metadata:
       labels:
-        app: 
+        app: worker
     spec:
       containers:
-      - image: dockersamples/
-        name: 
+      - image: dockersamples/examplevotingapp_worker
+        name: worker-container

@@ -1,18 +1,21 @@
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 
+  name: redis-deploy
 spec:
-  replicas: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
   template:
     metadata:
       labels:
-        app: 
+        app: redis
     spec:
       containers:
-      - image: kubernetes/
-        name: 
+      - image: redis:latest
+        name: redis-container
         ports:
           - containerPort: 
         env:
@@ -22,11 +25,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: 
+  name: redis
 spec:
   type: ClusterIP
   ports:
   - port: 
     targetPort: 
   selector:
-    app: 
+    app: redis 
