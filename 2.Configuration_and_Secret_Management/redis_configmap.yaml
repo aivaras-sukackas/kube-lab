@@ -1,0 +1,30 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: redis
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+      - image: kubernetes/redis:v1
+        name: redis
+        ports:
+          - containerPort: 6379
+        env:
+        - name: MASTER
+          value: "true"
+        volumeMounts:
+        - mountPath: 
+          name: 
+      volumes:
+        - name: 
+          configMap:
+            name: 
+            items:
+            - key: 
+              path:   

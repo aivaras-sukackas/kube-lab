@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: 
+
+spec:
+  replicas: 
+  template:
+    metadata:
+      labels:
+        app: 
+    spec:
+      containers:
+      - image: dockersamples/
+        name: 

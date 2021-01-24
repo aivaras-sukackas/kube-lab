@@ -1,0 +1,38 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: 
+spec:
+  replicas: 
+  template:
+    metadata:
+      labels:
+        app: 
+    spec:
+      containers:
+      - image: postgres:9.4
+        env:
+          - name: 
+            value: 
+        name: 
+        ports:
+          - containerPort: 
+        volumeMounts:
+        - mountPath: 
+          name:  
+      volumes:
+      - name: 
+        emptyDir: {} 
+---        
+apiVersion: v1
+kind: Service
+metadata:
+  name: 
+spec:
+  type: ClusterIP
+  ports:
+  - port: 
+    targetPort: 
+  selector:
+    app: 

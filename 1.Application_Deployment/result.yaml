@@ -1,0 +1,29 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: 
+spec:
+  replicas: 
+  template:
+    metadata:
+      labels:
+        app: 
+    spec:
+      containers:
+      - image: aivarassu/
+        ports:
+        - containerPort: 
+        name: 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: 
+spec:
+  type: ClusterIP
+  ports:
+  - port: 
+    targetPort:  
+  selector:
+    app: 
