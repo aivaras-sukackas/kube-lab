@@ -16,6 +16,7 @@ spec:
       containers:
       - image: redis:latest
         name: redis-container
+        command: [ "redis-server", "/usr/local/etc/redis/redis.conf" ]
         ports:
           - containerPort: 6379
         env:
